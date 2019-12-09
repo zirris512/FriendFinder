@@ -7,8 +7,8 @@
     <title>Survey</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,8 @@
 
         <h3><strong>Q1</strong></h3>
         <h4>I find it hard to stay focused on one thing</h4>
-        <select class="chosen-select" id="q1">
+        <select class="questions my-3" id="q1">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -31,7 +32,8 @@
         </select>
         <h3><strong>Q2</strong></h3>
         <h4>I like being alone more than with other people</h4>
-        <select class="chosen-select" id="q2">
+        <select class="questions my-3" id="q2">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -40,7 +42,8 @@
         </select>
         <h3><strong>Q3</strong></h3>
         <h4>I work better in groups than on my own</h4>
-        <select class="chosen-select" id="q3">
+        <select class="questions my-3" id="q3">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -49,7 +52,8 @@
         </select>
         <h3><strong>Q4</strong></h3>
         <h4>I can be hard to deal with</h4>
-        <select class="chosen-select" id="q4">
+        <select class="questions my-3" id="q4">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -58,7 +62,8 @@
         </select>
         <h3><strong>Q5</strong></h3>
         <h4>I favor modern tech over old tech</h4>
-        <select class="chosen-select" id="q5">
+        <select class="questions my-3" id="q5">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -67,7 +72,8 @@
         </select>
         <h3><strong>Q6</strong></h3>
         <h4>Excercise is important to me</h4>
-        <select class="chosen-select" id="q6">
+        <select class="questions my-3" id="q6">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -76,7 +82,8 @@
         </select>
         <h3><strong>Q7</strong></h3>
         <h4>Being with family is important</h4>
-        <select class="chosen-select" id="q7">
+        <select class="questions my-3" id="q7">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -85,7 +92,8 @@
         </select>
         <h3><strong>Q8</strong></h3>
         <h4>I dream of going on an adventure someday</h4>
-        <select class="chosen-select" id="q8">
+        <select class="questions my-3" id="q8">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -94,7 +102,8 @@
         </select>
         <h3><strong>Q9</strong></h3>
         <h4>One day, I hope to own a mansion</h4>
-        <select class="chosen-select" id="q9">
+        <select class="questions my-3" id="q9">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -103,14 +112,15 @@
         </select>
         <h3><strong>Q10</strong></h3>
         <h4>I often wonder what is beyond the sky</h4>
-        <select class="chosen-select" id="q10">
+        <select class="questions my-3" id="q10">
+            <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <button class="btn btn-lg btn-success btn-block" type="submit"><span class="fa fa-check-circle"></span> Submit</button>
+        <button type="submit" class="btn btn-success btn-lg btn-block my-3" id="submit"><span class="fa fa-check-circle" aria-hidden="true"></span> Submit</button>    
     </div>
 
     <footer class="footer">
@@ -123,14 +133,16 @@
         </div>
     </footer>
     
-    <div class="modal fade" id="results-modal" role="dialog">
-        <div class="modal-dialogue">
+    <div class="modal fade" id="match-modal" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h2 class="modal-title"><strong>Best Match</strong></h2>
                 </div>
                 <div class="modal-body">
+                    <h4 id="match-name"></h4>
+                    <img id="match-img" src="" alt="" style="height: 300px; width: 300px;">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -140,7 +152,58 @@
     </div>
 
     <script type="text/javascript">
-    
+        $('#submit').on('click', function(event) {
+            event.preventDefault();
+
+            const validateForm = () => {
+                let valid = true;
+                $('.form-control').each(function() {
+                    if($(this).val() === '') {
+                        valid = false;
+                    }
+                });
+
+                $('.questions').each(function() {
+                    if($(this).val() === '') {
+                        valid = false;
+                    }
+                });
+                return valid;
+            }
+
+            if(validateForm()) {
+                const userData = {
+                    name: $('#name').val().trim(),
+                    photo: $('#photo').val().trim(),
+                    scores: [
+                        $('#q1').val(),
+                        $('#q2').val(),
+                        $('#q3').val(),
+                        $('#q4').val(),
+                        $('#q5').val(),
+                        $('#q6').val(),
+                        $('#q7').val(),
+                        $('#q8').val(),
+                        $('#q9').val(),
+                        $('#q10').val()
+                    ]
+                };
+
+                console.log(userData);
+            
+                $.post('/api/friends', userData, function(data) {
+                    console.log(data);
+                    $('#match-name').text(data.name);
+                    $('#match-img').attr('src', data.photo);
+                    $('#match-modal').modal('toggle'); //Browser freezes up and does not open modal at this point
+                    //Commented line 198 out and did not encounter freezing. Modal, however, never opened.
+                    //Attempted to find a fix for several hours but could not find one.
+                });
+            }
+            else {
+                alert('Please fill out all fields before submitting!');
+            }
+        });
     </script>
 </body>
 </html>

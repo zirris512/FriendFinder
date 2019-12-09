@@ -7,10 +7,11 @@ const friendMatch = (friend, user) => {
     friend.forEach(element => {
         let sum = 0;
         for(let i = 0; i < element.scores.length; i++) {
-            sum += Math.abs(element.scores[i] - user[i]);
+            sum += Math.abs(element.scores[i] - parseInt(user[i]));
         }
         scoreDifference.push(sum);
     });
+    
     let value = scoreDifference[0];
     for(let i = 1; i < scoreDifference.length; i++) {
         if (scoreDifference[i] < value) {
@@ -18,7 +19,6 @@ const friendMatch = (friend, user) => {
             index = i;
         }
     }
-
     return index;
 }
 
