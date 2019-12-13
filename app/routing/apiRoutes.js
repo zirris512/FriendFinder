@@ -32,5 +32,4 @@ module.exports = app => {
         const match = friendData[friendMatch(friendData, req.body.scores)];
         res.json(match);
     });
-
 };
