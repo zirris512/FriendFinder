@@ -30,6 +30,7 @@ module.exports = app => {
 
     app.post('/api/friends', (req, res) => {
         const match = friendData[friendMatch(friendData, req.body.scores)];
+        friendData.push(req.body);
         res.json(match);
     });
 };

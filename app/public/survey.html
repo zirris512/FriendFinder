@@ -195,13 +195,16 @@
                     console.log(data);
                     $('#match-name').text(data.name);
                     $('#match-img').attr('src', data.photo);
-                    $('#match-modal').modal('toggle'); //Browser freezes up and does not open modal at this point
-                    //Commented line 198 out and did not encounter freezing. Modal, however, never opened.
-                    //Attempted to find a fix for several hours but could not find one.
+                    $('#match-modal').modal('toggle');
                 });
             }
             else {
                 alert('Please fill out all fields before submitting!');
+            }
+            $('#name').val('');
+            $('#photo').val('');
+            for(let i = 0; i< 10; i++) {
+                $('.questions')[i].selectedIndex = 0;
             }
         });
     </script>
