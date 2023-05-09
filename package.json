@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/zirris512/FriendFinder#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.18.2"
   }
 }
